@@ -14,7 +14,7 @@
         </tr>
         
     </thead>
-    <tbody>
+    <tbody *ngIf="reservations.length; else noReservation">
         <tr *ngFor="let reservation of reservations">
             <td>{{reservation.guestName}}</td>
             <td>{{reservation.guestEmail}}</td>
@@ -34,5 +34,5 @@
 
 
 <ng-template #noReservation>
-    <p>No reservation available !</p>
+    <p>No reservation available.</p>
 </ng-template>
